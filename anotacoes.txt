@@ -1,0 +1,45 @@
+escreva uma vez rode em qualquer lugar
+
+JVM - Java Virtual Machine
+
+Linguagem JAVA - compilada e interpretada
+
+casting - forçar variável, em uma variável tentar colocar um valor que não é suportado pelo tipo que ela for
+
+Como usar um  ternário;
+Ternário = (condicao) ? verdadeiro : falso;
+
+
+ARRAYS - por padrão se inicia
+byte, short, int, long, float, e double = 0(zero)
+char = '\u0000'   '  '
+boolean = false
+String null
+
+
+Arrays multidimentsionais - arrays dentro de arrays
+
+
+Orientação a Objetos
+Mapear o mundo real no mundo computacional
+
+Classe = forma
+- classe é o que representa algo do mundo real que apresentam funcionalidades em comum
+- agrupamento de coisas do mundo real que vão dar origem a objetos
+
+definir valores de atributosa dentro da classe, o valor vai ser igual para todos os objetos
+
+
+Coesão - propósito das classes, n misturam o porque da existência
+
+
+VarArgs  X Array
+- muda apenas a sintaxe
+- quando se passa um parâmetro o varargs deve ser o último parâmetro, após ele não funciona
+
+
+Modificadores de acesso
+Public - pode ser acessado de qualquer classe
+Private - pode ser acessado apenas pelo objeto
+get - pegar
+set - apotar
