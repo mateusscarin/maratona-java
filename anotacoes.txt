@@ -41,5 +41,116 @@ VarArgs  X Array
 Modificadores de acesso
 Public - pode ser acessado de qualquer classe
 Private - pode ser acessado apenas pelo objeto
-get - pegar
-set - apotar
+Protected - qualquer subclasse em qualquer pacote vai ter acesso direto aos atributos como se tivesse esse atributo na própria classe
+
+
+Sobrecarga de metodos - o java permite criar metodos com os mesmo nome porém o tipo ou a quantidade de parâmetro diferentes
+
+
+Construtores
+- Inicializador de um objeto
+- o java cria o contrutor automaticamente na hora da complilação
+- inicializados antes de qualquer método
+- NÃO POSSUEM RETORNO
+
+Vantagem dos contrutores:
+- obrigam a seguir algumas regras, exemplo se vc tem parâmetros obrigatórios, passando esses parâmetros no construtor, ele n permitirá criar o objeto sem que esses parâmetros sejam passados
+
+
+Blocos de inicialização
+- Instância
+- Executado todas as vezes que se cria um novo objeto
+- Independemente de que local do código for colocado ele será inicializado primeiro que os construtores
+
+
+Bloco de inicialização estáticos
+- são inicializados apenas uma vez, diferentemente dos blocos não estáticos
+
+
+Ordem de execução dentro de uma classe:
+1- Alocado espaço em memória
+2- Cada atributo de classe é criado e incializado com valores default ou o que for passado
+3- Bloco de incialização
+4- Construtor é executado
+
+
+Modificador estático - static
+- colocar dps do modificador de acesso
+- quando se colocar um atributo como static ele passa a pertencer a classe e não mais ao objeto, isso se prova quando se faz uma alteração no valor do modificador tem que referenciar a classe e é uma alteração que é observada em todos os objetos.
+
+
+Métodos estáticos
+- n se pode acessar nenhuma variável não estática dentro de métodos estáticos, porque a inteção de se crirar um métodos estáticos é por existir a possibilidade de não ter objetos em memória.
+- objetos vão ser criados depois que os valores estáticos forem inicializados
+
+
+
+Herança
+Assosiaçao --> uma coisa tem outra coisa (Ex: Escola tem aluno)
+Herança --> uma coisa é outra (Ex: Funcionario é Pessoa)
+
+Utiliza-se herança quando se quer extender a funcionalidade de uma classe e manter um relacionamento entre elas.
+
+super - quando se utiliza o super está se referindo ao objeto mais genérico
+
+Todas as vezes que se adiciona um contrutor com argumento na classe mãe obrigatoriamente você deve alterar nas classes filhas
+
+SEQUÊNCIA DE INICIALIZAÇÃO COM HERANÇA
+1- Bloco de incialização estático da super classe é executado quando a JVM carregar classe pai
+2- Bloco de inicialização estpárico da sub classe é executado quando a JVM carregar classe filha
+3- Alocado espaço em memória pro objeto da superclasse é criado e inicializado com valores default ou o que for passado
+4- Bloc de incialização é executado na área em que aparece
+5- Contrutor é executado da superclasse
+6- Alocado espaço em memória pro objeto da subclasse
+7- Cada atributo de subclasse é criado e incialido com os valores default ou que for passado
+8- Bloco de inicialização da subclasse é executado na ordem em que aparece
+9- Construtor é executado da subclasse
+
+
+
+SOBRESCRITA
+Sobreescrita - em uma herança sobreescrever um método da classe mãe na classe filha
+
+@Override - garantir que está sobrescrevendo o método correto
+
+MODIFICADOR final
+Tipos Primitivos - serve para criar CONSTANTES
+para definir uma consntate deve se usar o 'final' após o modificador de acesso (funciona sem mas pode-se colocar o 'static')e definir o tipo e atribuir valor:
+Ex: private static final double VELOCIDADE_LIMITE = 150.0;
+
+Referencias - as referências para o objeto não podem ser alteradas, porém os dados do objeto podem ser mudados
+ Ex: public final Comprador COMPRADOR = new Comprador();
+
+Classes e métodos - está associado a herança quando se deseja proibir que outra classe extenda os atributos de outra, basta colocar 'final' na classe. Já quando se usa o modificador 'final' em métodos, isso impossibilita que um método da superclasse seja sobrescrito na subclasse
+Nos métodos que não podem sofrer alterações de funcionamento
+
+
+
+Enumeração
+- Tipo especial de classe
+- é uma classe que vc definirá atributos que vão representar uma enumeração, nos quais não podem ser alterados
+- pode ficar dentro de uma classe
+
+Enumeraçao de métodos
+- Consiste em criar métodos dentro das enumerações e que podem ser sobrescritos (métodos abstratos)
+Método abstrato - criado na intençao de ser sobrescrito, não possui corpo e tem q colocar ponto e vírgula na frente
+
+Retornar Enumeração com base em atributos
+- Consiste em pegar um atributo e trazer o valor na enumeração
+
+
+
+CLASSES ABSTRATAS
+- Foram criadas para resolver um problema de desenho de código.	
+- serve para ser usada como modelo para outra classe
+- em uma relação de herança é criada para ser superclasse
+- não pode ser estanciada, não pode criar objetos desse tipo de classe 
+
+
+
+Interface
+- Foram criadas com intuito de prover implementação
+- não utiliza public class e sim interface
+- não utiliza-se extends, utiliza-se o implements
+
+
