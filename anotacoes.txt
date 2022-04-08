@@ -42,6 +42,8 @@ Modificadores de acesso
 Public - pode ser acessado de qualquer classe
 Private - pode ser acessado apenas pelo objeto
 Protected - qualquer subclasse em qualquer pacote vai ter acesso direto aos atributos como se tivesse esse atributo na própria classe
+Default - modificador de acesso de pacote, quando não se identifica o modificador de acesso, esse q é usado como padrão
+// private --> default --> protected --> public  ~do mais restritivo para o menos restritivo
 
 
 Sobrecarga de metodos - o java permite criar metodos com os mesmo nome porém o tipo ou a quantidade de parâmetro diferentes
@@ -147,10 +149,51 @@ CLASSES ABSTRATAS
 - não pode ser estanciada, não pode criar objetos desse tipo de classe 
 
 
+Métodos abstratos
+- são métodos que podem ser sobrescritos
+- se voce extende de uma classe abstrata um método abstrato, vc deve prover implementação para ele
+- Regra: se uma classe abstrata(pai) extende outra classe abstrata(avô) as classes(filhas) ficarão com erro de compilação se a classe pai não implementar os métodos da classe avô
+
 
 Interface
 - Foram criadas com intuito de prover implementação
 - não utiliza public class e sim interface
 - não utiliza-se extends, utiliza-se o implements
+- uma classe concreta pode implementar N interfaces diferente da herança, no qual a subclasse só pode extender uma superclasse.
+- para criar métodos que possuam implementação dentro de uma interface deve usar o 'default' que foi uma atualização que veio com o Java8 que permite que esse métodos possam possuir corpo, porém sem a obrigação de ser implementado, diferentemente dos métodos abstratos.
+
+
+
+POLIMORFISMO
+- multiplas formas
+- trocar o tipo da variável de referência, mas ainda continuar usando o mesmo objeto.
+- só pode ser usado na herança
+
+
+
+Exceções
+Error
+- Problemas quenão tem como se recuperar
+- Impossíveis de corrigir com o programa em execução
+
+Exceções checked e unchecked (checadas e não checadas)
+Exeções checadas são aquelas que são filhas da classe Exception diretamente se não forem tratadas, ocorrerá um erro de compilação, n consegue nem compilar o código
+Exception
+- IOException
+- SQLExpection
+- MalformedURLException
+
+
+RuntimeException
+- NullPointerException 
+- NumberFormatException
+- ClassCastException
+- IndexOutBoundsException
+- caso ocorra algumas dessas exceptions , deve-se conferir e vericar o código, porque provavelmente é alguma coisa que deveria ter sido tratada e não foi.
+- não precisa de verificação para o código compilar
+
+
+
+
 
 
