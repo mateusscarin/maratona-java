@@ -1,4 +1,4 @@
-package br.com.orientacaoobjetos.exception.exception;
+package br.com.orientacaoobjetos.exception.exception.test;
 
 import java.io.File;
 import java.io.IOException;

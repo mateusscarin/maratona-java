@@ -1,4 +1,4 @@
-escreva uma vez rode em qualquer lugar
+"escreva uma vez rode em qualquer lugar"
 
 JVM - Java Virtual Machine
 
@@ -177,7 +177,7 @@ Error
 - Impossíveis de corrigir com o programa em execução
 
 Exceções checked e unchecked (checadas e não checadas)
-Exeções checadas são aquelas que são filhas da classe Exception diretamente se não forem tratadas, ocorrerá um erro de compilação, n consegue nem compilar o código
+Exeções checadas são aquelas que são filhas da classe Exception diretamente. Caso não forem tratadas, ocorrerá um erro de compilação, n consegue nem compilar o código
 Exception
 - IOException
 - SQLExpection
@@ -192,8 +192,112 @@ RuntimeException
 - caso ocorra algumas dessas exceptions , deve-se conferir e vericar o código, porque provavelmente é alguma coisa que deveria ter sido tratada e não foi.
 - não precisa de verificação para o código compilar
 
+MULTI  CATCH
+Tratar de múltiplas exceções de uma vez - basta adcionar vários catchs
+
+Exceções mais genéricas deve vir ao final, porque caso vierem no início do tratamento de exceções nunca chegará nas mais específicas.
+
+Multi catch em linha
+Ex: try {
+            talvezLanceException();
+        } catch (SQLException | IOException e) {
+            e.printStackTrace();
+        }
+
+- tomar cuidado com Excepitions na mesma linha de herança, ex: IOExecption e FileNotFoundException, IO é mais genérica e FileNotFound é a mais específica.
+
+Try with resources
+- se encarrega de fechar a conexão ou conexões, porém só podem ser declarados objetos ou variáveis de referência que implementem a interface Closeable ou AutoCloseble
+- veio com intuito de melhorar a legibilidade do código
+- fechados em ordem inversa do que são declarados
+
+Exceções Personalizadas
+- extender Exception já significa que vc tem uma Exceção personalizada
+- Dependendo da regar de negócio faz-se necessário que as Exceções sejam bastante específicas, daí a importância das exceçõespersonalizadas
+
+Exceções e regras de sobrescrita
+Quando está sobrescrevendo:
+- pode não lançar nenhuma exceção
+- lançar todas as exceções
+- pode adicionar qualquer exceção do tipo unchecked
+- não se pode adicionar exceções mais genéricas ou do tipo checked dos que foram declarados no método original (método na classe mais genérica) 
 
 
 
+CLASSES UTILITÁRIAS
+*Wrappers*
+byte --> Byte
+short --> Short
+int --> Integer
+long --> Long
+float --> Float
+double --> Double
+char --> Character
+boolean --> Boolean
+- poder passar os parâmetros numericos não mais com valores, mas sim como variáveis de referência
+- Estruturas de Dados pacote de Coleções (ArrayList, Vetores, etc) não trabalham com tipos primitivos
+- permite a utilização de métodos
+- tipos primitivos não são obsoletos, devem ser usados
+
+Unboxing e autoboxing
+Autobixing - transformar tipo primitivo em Wrapper
+Unboxing - transformar Wrapper em tipo primitivo
+
+Transformar String em Wrapper
+Ex : Integer = Integer.parseInt("1");
+
+*String*
+- Strings são imutáveis
+- tomar cuidado ao associar um novo valor a variável de referência, porque dependendo vc não conseguirá utilizar o valor novo
+
+Métodos:
+- charAt() -  mostra o caracter da String na posição passada como parâmetro
+- toUpperCase() - coloca todos os carateres como maiúculos
+- toLowerCase() - coloca todos os caracteres como minúsculo
+- repalce(antes, depois) - substitui na String um carater por outro
+- length() - contador
+- substring() - limita a String, consegue apresentar apenas uma parte do todo, colocando nos parâmetros o inicial e o final, caso passe apenasz 1 parâmetro, será apresentado da posição passada até o fim
+-trim() - remove espaços em branco de uma String antes e depois
+
+
+*Performance*
+StringBuilder - desempenho absurdamente maior que o da String normal
+StringBuffer - mesma função da String Builder, porém usada em um ambiente multThreads
+
+*String Builder*
+- n é uma String
+- n se adiciona uma string builder da mesma forma que uma String normal, deve-se usar o append
+
+Métodos:
+- append() - contatena uma String a outra
+- reverse() - inverte a String, do último para o primeiro caracter
+- delete() - passa-se 2 parâmetros, para definir um intervalo e deleta esse intervalo
+
+
+*Date* 
+- trabalha com long
+- grandes partes dos métodos se tornaram obsoletos
+- teve problemas de intercionalização
+
+
+*Calendar*
+- Veio com intuito de resolver problemas que a classe date n supria
+- classe abstrata, ou seja, não dá pra usar o new, tem q usar o  getInstance()
+
+Métodos:
+- DAY_OF_WEEK
+- DAY_OF_MONTH
+- DAY_OF_YEAR
+- DAY_OF_WEEK_IN_MONTH
+
+
+DateFormat
+- Permite exibir a data de diversas formas
+- evolução do Date
+
+
+Locale
+- veio para resover os problemas de internacionalização
+- 
 
 
