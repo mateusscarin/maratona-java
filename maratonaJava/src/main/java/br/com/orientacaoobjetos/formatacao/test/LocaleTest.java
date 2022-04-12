@@ -1,4 +1,4 @@
-package br.com.orientacaoobjetos.datas.test;
+package br.com.orientacaoobjetos.formatacao.test;
 
 import java.text.DateFormat;
 import java.util.Calendar;

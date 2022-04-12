@@ -11,7 +11,6 @@ public class CalendarTest {
         if (c.getFirstDayOfWeek() == Calendar.SUNDAY) {
             System.out.println("Domingo é o primeiro dia da semana");
         }
-
         System.out.println(c.get(Calendar.DAY_OF_WEEK));
         System.out.println(c.get(Calendar.DAY_OF_MONTH));
         System.out.println(c.get(Calendar.DAY_OF_YEAR));

@@ -7,7 +7,7 @@ Linguagem JAVA - compilada e interpretada
 casting - forçar variável, em uma variável tentar colocar um valor que não é suportado pelo tipo que ela for
 
 Como usar um  ternário;
-Ternário = (condicao) ? verdadeiro : falso;
+Ternário = (condicao) ? verdadeiro :  
 
 
 ARRAYS - por padrão se inicia
@@ -266,7 +266,7 @@ StringBuffer - mesma função da String Builder, porém usada em um ambiente mul
 
 *String Builder*
 - n é uma String
-- n se adiciona uma string builder da mesma forma que uma String normal, deve-se usar o append
+- n se concatena uma string builder da mesma forma que uma String normal, deve-se usar o append
 
 Métodos:
 - append() - contatena uma String a outra
@@ -281,7 +281,7 @@ Métodos:
 
 
 *Calendar*
-- Veio com intuito de resolver problemas que a classe date n supria
+- Veio com intuito de resolver problemas que a classe date n suprir
 - classe abstrata, ou seja, não dá pra usar o new, tem q usar o  getInstance()
 
 Métodos:
@@ -290,14 +290,49 @@ Métodos:
 - DAY_OF_YEAR
 - DAY_OF_WEEK_IN_MONTH
 
-
 DateFormat
 - Permite exibir a data de diversas formas
 - evolução do Date
-
+- classe abstrata
 
 Locale
-- veio para resover os problemas de internacionalização
-- 
+- veio para resolver os problemas de internacionalização
+
+NumberFormat
+- formata numeros de acordo com o local (locale) desejado
+
+SimpleDateFormat
+- um pouco mais flexível que o DateFormat
+- permite criar datas customizadas
+- colocar aspas simples para o Java ignorar alguma coisa dentro de um sout
+
+LocalDate
+- introduzida no java8
+- só trabalha com a data
+- possui vários métodos que facilitam para o desenvolvedor 
+- classe imutável - garante que não ocorrerá problemas de inconsistência de dados
+
+LocalTime
+- mesmo padrão que o LocalDate, porém para hora
+
+LocalDateTime
+- junção do LocalTime com o LocalDate
+- com métodos adicionais
+
+Instant
+- Parecida com a date porém trabalha com nanosegundos
+
+Duration
+- cria para trabalhar com intervalos de tempo
+- baseada com segundos e nanosegundos
+
+Period
+- Datas 
+
+
+*DataTimeFormatter*
+- classe responsável por formatações em java atualmente
+- format : tranformando Objeto para String
+- parse: tranformando String para Objeto
 
 
