@@ -254,7 +254,7 @@ Métodos:
 - charAt() -  mostra o caracter da String na posição passada como parâmetro
 - toUpperCase() - coloca todos os carateres como maiúculos
 - toLowerCase() - coloca todos os caracteres como minúsculo
-- repalce(antes, depois) - substitui na String um carater por outro
+- replace(antes, depois) - substitui na String um carater por outro
 - length() - contador
 - substring() - limita a String, consegue apresentar apenas uma parte do todo, colocando nos parâmetros o inicial e o final, caso passe apenasz 1 parâmetro, será apresentado da posição passada até o fim
 -trim() - remove espaços em branco de uma String antes e depois
@@ -334,5 +334,12 @@ Period
 - classe responsável por formatações em java atualmente
 - format : tranformando Objeto para String
 - parse: tranformando String para Objeto
+
+
+*ResourceBundle*
+- Forma de internacionalizar mensagens
+
+
+
 
 
